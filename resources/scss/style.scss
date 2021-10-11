@@ -1,0 +1,25 @@
+body {
+    font-family: 'Inconsolata', monospace;
+}
+.container{
+    max-width: 1100px;
+}
+.navbar-collapse {
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: black !important;
+            }
+        }
+
+        .nav-link:hover {
+            color: $primary !important;
+        }
+
+    }
+}
+
+.now-date{
+    font-size: 150px;
+    color: $primary;
+}

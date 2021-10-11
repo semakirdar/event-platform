@@ -45,15 +45,15 @@
             <div class="col-sm-12 col-md-12 col-lg-4">
                 <form>
                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value=" ">All Events</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
                     </select>
                 </form>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-8">
-               <p class="now-date float-end">11</p>
+                <p class="now-date float-end">{{ date('d') }}</p>
             </div>
         </div>
     </div>

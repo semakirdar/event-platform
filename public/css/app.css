@@ -17680,3 +17680,37 @@ body {
   font-size: 150px;
   color: #ff704d;
 }
+
+.event-item .event-info {
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+.event-item .event-info .event-date {
+  line-height: 0px;
+}
+.event-item .event-info .event-date h1, .event-item .event-info .event-date .h1 {
+  line-height: 51px;
+  font-size: 120px;
+  font-weight: bold;
+}
+.event-item .event-info .date-month {
+  color: #ff704d;
+  font-size: 18px;
+  position: absolute;
+  top: -1px;
+  right: -18px;
+}
+.event-item .event-info .event-time {
+  margin-top: 25px;
+}
+.event-item .event-info .event-time p {
+  margin-bottom: 0;
+}
+.event-item .event-image {
+  padding-top: 20px;
+}
+.event-item .studio {
+  margin-top: 50px;
+  border-bottom: 2px solid black;
+  margin-bottom: 80px;
+}

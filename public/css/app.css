@@ -17720,3 +17720,12 @@ body {
   border-bottom: 2px solid black;
   margin-bottom: 80px;
 }
+
+.event-detail-image img {
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  height: 600px;
+  -o-object-position: center;
+     object-position: center;
+}

@@ -16,12 +16,14 @@
                                     <p class="date-month">{{ $event->startDateParts['month'] }}</p>
                                 </div>
                                 <div class="event-time">
-                                    <p>{{ $event->name }}</p>
+                                    <p>{{ $event->title}}</p>
                                     <p>{{ $event->startDateParts['hour']}} - {{ $event->endDateParts['hour'] }}</p>
                                 </div>
                             </div>
                             <div class="event-image mb-2">
-                                <img src="{{ $event->getFirstMediaUrl() }}">
+                                <a href="{{ route('event.detail', ['id' => $event->id]) }}">
+                                    <img src="{{ $event->getFirstMediaUrl() }}">
+                                </a>
                             </div>
                             <h4>{{$event->description}}</h4>
                             <div class="studio ">

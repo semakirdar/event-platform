@@ -6,7 +6,7 @@
             <div class="row mb-5">
 
                 @if(count($events) > 0)
-                @foreach($events as $event)
+                    @foreach($events as $event)
                         <div class="col-sm-12 col-md-12 col-lg-4">
                             <div class="event-item">
                                 <div class="event-info d-flex justify-content-between align-items-center">
@@ -15,12 +15,14 @@
                                         <p class="date-month">{{ $event->startDateParts['month'] }}</p>
                                     </div>
                                     <div class="event-time">
-                                        <p>{{ $event->name }}</p>
+                                        <p>{{ $event->title }}</p>
                                         <p>{{ $event->startDateParts['hour']}} - {{ $event->endDateParts['hour'] }}</p>
                                     </div>
                                 </div>
                                 <div class="event-image mb-2">
-                                    <img src="{{ $event->getFirstMediaUrl() }}">
+                                    <a href="{{ route('event.detail', ['id' => $event->id]) }}">
+                                        <img src="{{ $event->getFirstMediaUrl() }}">
+                                    </a>
                                 </div>
                                 <h4>{{$event->description}}</h4>
                                 <div class="studio ">
@@ -28,7 +30,7 @@
                                 </div>
                             </div>
                         </div>
-                @endforeach
+                    @endforeach
                 @else
                     <h1>Not Found Event</h1>
                 @endif

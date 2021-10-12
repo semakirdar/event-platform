@@ -11,7 +11,16 @@ class EventController extends Controller
     {
         $events = Event::query()->where('category_id', $categoryId)->get();
         return view('Events.index', [
-            'events' => $events
+            'events' => $events,
+            'selectedCategoryId' => $categoryId
+        ]);
+    }
+
+    public function detail($id)
+    {
+        $event = Event::query()->where('id', $id)->first();
+        return view('Events.detail', [
+            'event' => $event
         ]);
     }
 }

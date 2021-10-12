@@ -24,6 +24,6 @@ Route::get('/event/create', [HomeController::class, 'create'])->name('event.crea
 Route::post('/event/store', [HomeController::class, 'store'])->name('event.store');
 
 Route::get('/event/{categoryId}', [EventController::class, 'index'])->name('event.index');
-
+Route::get('/event/detail/{id}', [EventController::class, 'detail'])->name('event.detail');
 
 

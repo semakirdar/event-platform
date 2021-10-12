@@ -78,18 +78,21 @@ body {
     }
 }
 
-
-
 .event-detail-image{
     img{
         width: 100%;
         object-fit: cover;
         height: 600px;
         object-position: center;
-
     }
 }
-
 .participant-avatar{
     object-fit: cover;
+}
+.event-edit-image{
+img{
+    height:500px;
+    width: 100%;
+    object-fit: contain;
+}
 }

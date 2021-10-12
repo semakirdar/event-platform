@@ -34,4 +34,32 @@ class EventController extends Controller
             'events' => $events
         ]);
     }
+
+    public function edit($eventId)
+    {
+        $event = Event::query()->where('id', $eventId)->first();
+
+        return view('Events.edit', [
+            'event' => $event
+        ]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $event = Event::query()->where('id', $id)->first();
+        $event->name = $request->title;
+        $event->start_date = $request->start_date;
+        $event->end_date = $request->end_date;
+        $event->desrciption = $request->description;
+        $event->location = $request->location;
+
+
+
+        $event->save();
+        return redirect()->route('event.list');
+
+
+    }
+
+
 }

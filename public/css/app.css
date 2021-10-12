@@ -17737,3 +17737,10 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.event-edit-image img {
+  height: 500px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}

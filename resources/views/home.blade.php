@@ -2,8 +2,6 @@
 @section('content')
 
     <div class="container">
-
-
         <a href="{{ route('event.create') }}" class="btn btn-primary mb-5">Create Event</a>
         <a href="{{ route('event.list') }}" class="btn btn-primary mb-5">Event List</a>
         <div class="events mt-5">
@@ -34,11 +32,6 @@
                     </div>
                 @endforeach
             </div>
-
         </div>
     </div>
-
-
-
-
 @endsection

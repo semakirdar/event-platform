@@ -18,12 +18,10 @@ class HomeController extends Controller
             'events' => $events
         ]);
     }
-
     public function create()
     {
         return view('Events.create');
     }
-
     public function store(StoreRequest $request)
     {
         $event = Event::query()->create([
@@ -37,8 +35,5 @@ class HomeController extends Controller
 
         $event->addMediaFromRequest('image')->toMediaCollection();
         return redirect()->route('home');
-
     }
-
-
 }

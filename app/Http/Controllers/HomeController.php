@@ -11,7 +11,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $events = Event::query()->get();
+        return view('home', [
+            'events' => $events
+        ]);
     }
 
     public function create()

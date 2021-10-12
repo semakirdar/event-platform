@@ -11,7 +11,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $events = Event::query()->get();
+        $events = Event::query()
+            ->orderBy('start_date', 'ASC')
+            ->get();
         return view('home', [
             'events' => $events
         ]);

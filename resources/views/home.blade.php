@@ -5,6 +5,7 @@
 
 
         <a href="{{ route('event.create') }}" class="btn btn-primary mb-5">Create Event</a>
+        <a href="{{ route('event.list') }}" class="btn btn-primary mb-5">Event List</a>
         <div class="events mt-5">
             <div class="row mb-5">
                 @foreach($events as $event)
@@ -25,9 +26,9 @@
                                     <img src="{{ $event->getFirstMediaUrl() }}">
                                 </a>
                             </div>
-                            <h4>{{$event->description}}</h4>
+                            <h4>{{ substr($event->description, 0, 120) }}...</h4>
                             <div class="studio ">
-                                <p class="text-primary fw-bold">THE STUDIOS:{{ $event->location }}</p>
+                                <p class="text-primary fw-bold">LOCATIONS:{{ $event->location }}</p>
                             </div>
                         </div>
                     </div>

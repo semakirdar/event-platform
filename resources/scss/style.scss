@@ -58,6 +58,10 @@ body {
         }
     }
 
+    h4{
+        height: 120px;
+    }
+
     .event-image {
         padding-top: 20px;
         img{
@@ -79,11 +83,13 @@ body {
 .event-detail-image{
     img{
         width: 100%;
-        object-fit: fill;
+        object-fit: cover;
         height: 600px;
         object-position: center;
 
     }
 }
 
-
+.participant-avatar{
+    object-fit: cover;
+}

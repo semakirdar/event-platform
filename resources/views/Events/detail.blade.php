@@ -11,14 +11,32 @@
                 <h5 class="text-muted"> {{ $event->location }} </h5>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6">
+                <h4 class="text-primary">{{ $event->StartDateParts['month']}} {{ $event->StartDateParts['day'] }} -
+                    {{$event->EndDateParts['month']}} {{$event->EndDateParts['day']}}</h4>
+                <h4 class="text-primary mb-5"> {{ $event->StartDateParts['hour']}}
+                    - {{ $event->EndDateParts['hour']}}</h4>
+                <h4 class="mb-5">{{ $event->description }}</h4>
+            </div>
+        </div>
 
-                    <h4 class="text-primary">{{ $event->StartDateParts['month']}} {{ $event->StartDateParts['day'] }} -
-                        {{$event->EndDateParts['month']}} {{$event->EndDateParts['day']}}</h4>
-                    <h4 class="text-primary"> {{ $event->StartDateParts['hour']}} - {{ $event->EndDateParts['hour']}}</h4>
 
-
-
-                <h4>{{ $event->description }} Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren</h4>
+        <div class="participants mt-5">
+            <h2 class="text-primary mb-5 mt-5">Participants</h2>
+            <div class="row mb-4">
+                @foreach($participants as $participant)
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <div class="card">
+                            <div class="card-header text-center ">
+                                <img style="width: 100px; height: 100px;" class="rounded-circle participant-avatar"
+                                     src="{{$participant->getfirstMediaUrl()}}">
+                            </div>
+                            <div class="card-body text-center p-3">
+                                <h4>{{ $participant->name }}</h4>
+                                <h5>{{ $participant->title }} @ {{ $participant->company }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

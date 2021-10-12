@@ -17706,6 +17706,9 @@ body {
 .event-item .event-info .event-time p {
   margin-bottom: 0;
 }
+.event-item h4, .event-item .h4 {
+  height: 120px;
+}
 .event-item .event-image {
   padding-top: 20px;
 }
@@ -17723,9 +17726,14 @@ body {
 
 .event-detail-image img {
   width: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 600px;
   -o-object-position: center;
      object-position: center;
+}
+
+.participant-avatar {
+  -o-object-fit: cover;
+     object-fit: cover;
 }

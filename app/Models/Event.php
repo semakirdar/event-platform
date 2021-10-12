@@ -45,4 +45,8 @@ class Event extends Model implements HasMedia
             'hour' => $endDate->format('H:i')
         ];
     }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

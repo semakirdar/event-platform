@@ -18,7 +18,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light ">
 
-            <a class="navbar-brand" href="#">WEEKENDER <br> EVENTS SINGAPORE</a>
+            <a class="navbar-brand" href="{{ route('home') }}">WEEKENDER <br> EVENTS SINGAPORE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -44,10 +44,12 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-sm-12 col-md-12 col-lg-4">
                 <form>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <select id="categoryOption" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         <option value=" ">All Events</option>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option value="{{ $category->id }}">
+                                {{ $category->name }}
+                            </option>
                         @endforeach
                     </select>
                 </form>

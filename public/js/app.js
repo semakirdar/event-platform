@@ -5214,6 +5214,10 @@ __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/ind
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
 toastr = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
+var categoryOption = document.getElementById('categoryOption');
+categoryOption.addEventListener('change', function () {
+  window.location.href = '/event/' + this.value;
+});
 
 /***/ }),
 

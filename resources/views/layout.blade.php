@@ -38,6 +38,30 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Buy tickets</a>
                     </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link bg-white" type="button" id="dropdownMenuButton1"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                    <a class="dropdown-item"  href="{{route('category.create')}}">Category
+                                        Create</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"  href="{{ route('category.list') }}">Category
+                                        List</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"  href="{{ route('event.create') }}" >Event Create</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"  href="{{ route('event.list') }}" >Event List</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -48,7 +72,8 @@
                             aria-label=".form-select-lg example">
                         <option value="">All Events</option>
                         @foreach($categories as $category)
-                            <option {{ isset($selectedCategoryId) && $selectedCategoryId == $category->id ? 'selected' : '' }} value="{{$category->id }}">
+                            <option
+                                {{ isset($selectedCategoryId) && $selectedCategoryId == $category->id ? 'selected' : '' }} value="{{$category->id }}">
                                 {{ $category->name }}
                             </option>
                         @endforeach

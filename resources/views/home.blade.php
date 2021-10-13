@@ -28,7 +28,7 @@
                             </div>
                             <h4>{{ substr($event->description, 0, 120) }}...</h4>
                             <div class="studio ">
-                                <p class="text-primary fw-bold">LOCATIONS:{{ $event->location }}</p>
+                                <p class="text-primary fw-bold">LOCATIONS: {{ $event->location->name ?? '-'}}</p>
                             </div>
                         </div>
                     </div>

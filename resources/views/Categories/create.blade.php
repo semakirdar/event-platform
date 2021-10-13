@@ -9,9 +9,8 @@
                     Category Add
                 </div>
                 <div class="card-body">
-                    <form method="post" action="#" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('category.store') }}" enctype="multipart/form-data">
                         @csrf
-
                         <div class="mb-3">
                             <label>Name</label>
                             <input name="name" class="form-control">

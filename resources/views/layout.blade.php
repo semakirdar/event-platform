@@ -46,7 +46,7 @@
                 <form>
                     <select id="categoryOption" class="form-select form-select-lg mb-3"
                             aria-label=".form-select-lg example">
-                        <option value=" ">All Events</option>
+                        <option value="">All Events</option>
                         @foreach($categories as $category)
                             <option {{ isset($selectedCategoryId) && $selectedCategoryId == $category->id ? 'selected' : '' }} value="{{$category->id }}">
                                 {{ $category->name }}

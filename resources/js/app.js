@@ -7,5 +7,8 @@ toastr = require('toastr');
 let categoryOption = document.getElementById('categoryOption');
 
 categoryOption.addEventListener('change', function () {
-    window.location.href = '/event/' + this.value;
+    if(this.value.length <= 0)
+        window.location.href = '/';
+    else
+        window.location.href = '/event/' + this.value;
 });

@@ -17,11 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/admin/event/create', [HomeController::class, 'create'])->name('event.create');
 Route::post('/event/store', [HomeController::class, 'store'])->name('event.store');
 

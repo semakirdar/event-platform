@@ -18,7 +18,8 @@ class Event extends Model implements HasMedia
         'start_date',
         'end_date',
         'description',
-        'location'
+        'location',
+        'location_id'
     ];
 
     protected $casts = [
@@ -46,7 +47,14 @@ class Event extends Model implements HasMedia
         ];
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
 }

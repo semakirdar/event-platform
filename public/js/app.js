@@ -5216,7 +5216,7 @@ __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap
 toastr = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
 var categoryOption = document.getElementById('categoryOption');
 categoryOption.addEventListener('change', function () {
-  window.location.href = '/event/' + this.value;
+  if (this.value.length <= 0) window.location.href = '/';else window.location.href = '/event/' + this.value;
 });
 
 /***/ }),

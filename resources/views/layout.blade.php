@@ -71,10 +71,16 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 @guest()
                                     <li>
-                                        <a class="dropdown-item" href="{{route('register')}}">Register</a>
+                                        <a class="dropdown-item" href="{{route('register')}}">
+                                            <span>Register</span>
+                                            <i class="fas fa-user-plus"></i>
+                                        </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                                        <a class="dropdown-item" href="{{ route('login') }}">
+                                            <span>Login</span>
+                                            <i class="fas fa-user-lock"></i>
+                                        </a>
                                     </li>
                                 @endguest
                                 @auth()

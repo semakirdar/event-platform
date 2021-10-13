@@ -47,13 +47,18 @@ class EventController extends Controller
     public function update($id, Request $request)
     {
         $event = Event::query()->where('id', $id)->first();
-        $event->name = $request->title;
+        $event->title = $request->title;
         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
-        $event->desrciption = $request->description;
+        $event->description = $request->description;
         $event->location = $request->location;
 
-
+        if ($request->has('image') && !empty($request->image)) {
+            $media = $event->getFirstMedia();
+            if ($media)
+                $media->delete();
+            $event->addMediaFromRequest('image')->toMediaCollection();
+        }
 
         $event->save();
         return redirect()->route('event.list');

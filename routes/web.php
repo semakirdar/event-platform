@@ -28,7 +28,7 @@ Route::get('/event/{categoryId}', [EventController::class, 'index'])->name('even
 Route::get('/event/detail/{id}', [EventController::class, 'detail'])->name('event.detail');
 Route::get('/admin/event/list', [EventController::class, 'list'])->name('event.list');
 Route::get('/admin/event/{eventId}/edit', [EventController::class, 'edit'])->name('event.edit');
-Route::get('/admin/event/{id}/update', [EventController::class, 'update'])->name('event.update');
+Route::post('/admin/event/{id}/update', [EventController::class, 'update'])->name('event.update');
 
 Route::get('/admin/event/{eventId}/participant/create', [ParticipantController::class, 'create'])->name('participant.create');
 Route::post('/admin/participant/store', [ParticipantController::class, 'store'])->name('participant.store');

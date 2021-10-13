@@ -40,25 +40,6 @@
                     </li>
                     <li class="nav-item me-3">
                         <div class="dropdown">
-                            <a class="nav-link bg-warning" type="button" id="dropdownMenuButton1"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Users
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li>
-                                    <a class="dropdown-item" href="{{route('register')}}">Register</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Login</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
                             <a class="nav-link bg-white" type="button" id="dropdownMenuButton1"
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Admin
@@ -77,6 +58,25 @@
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('event.list') }}">Event List</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link" type="button" id="dropdownMenuButton1"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-caret-square-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                    <a class="dropdown-item" href="{{route('register')}}">Register</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Logout</a>
                                 </li>
                             </ul>
                         </div>

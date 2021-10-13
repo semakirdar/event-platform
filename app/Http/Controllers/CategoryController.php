@@ -40,7 +40,11 @@ class CategoryController extends Controller
 
     public function update($id, UpdateRequest $request)
     {
-       
+        $category = Category::query()->where('id', $id)->first();
+        $category->name = $request->name;
+
+        $category->save();
+        return redirect()->route('category.list');
 
     }
 }

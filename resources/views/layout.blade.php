@@ -69,15 +69,21 @@
                                 <i class="fas fa-caret-square-down"></i>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li>
-                                    <a class="dropdown-item" href="{{route('register')}}">Register</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('login') }}">Login</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Logout</a>
-                                </li>
+                                @guest()
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('register')}}">Register</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                                    </li>
+                                @endguest
+                                @auth()
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}">
+                                            <span>Logout</span> <i class="fas fa-sign-out-alt"></i>
+                                        </a>
+                                    </li>
+                                @endauth
                             </ul>
                         </div>
                     </li>

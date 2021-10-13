@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ParticipantController;
@@ -33,3 +34,5 @@ Route::post('/admin/event/{id}/update', [EventController::class, 'update'])->nam
 Route::get('/admin/event/{eventId}/participant/create', [ParticipantController::class, 'create'])->name('participant.create');
 Route::post('/admin/participant/store', [ParticipantController::class, 'store'])->name('participant.store');
 
+Route::get('/admin/category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('/admin/category/store', [CategoryController::class, 'store'])->name('category.store');

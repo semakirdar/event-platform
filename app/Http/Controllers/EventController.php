@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Events\UpdateRequest;
 use App\Models\Event;
 use App\Models\Participant;
 use Illuminate\Http\Request;
@@ -44,7 +45,7 @@ class EventController extends Controller
         ]);
     }
 
-    public function update($id, Request $request)
+    public function update($id, UpdateRequest $request)
     {
         $event = Event::query()->where('id', $id)->first();
         $event->title = $request->title;

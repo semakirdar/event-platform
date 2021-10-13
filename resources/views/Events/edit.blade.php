@@ -48,7 +48,7 @@
                         </div>
                         <div class="mb-3">
                             <label>Location</label>
-                            <input value="{{ $event->location }}" name="location" class="form-control">
+                            <input value="{{ $event->location->name ?? '-'}}" name="location" class="form-control">
                         </div>
 
                         <button class="form-control btn btn-primary">ADD</button>

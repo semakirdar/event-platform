@@ -26,7 +26,7 @@
                                 </div>
                                 <h4>{{$event->description}}</h4>
                                 <div class="studio ">
-                                    <p class="text-primary fw-bold">THE STUDIOS:{{ $event->location }}</p>
+                                    <p class="text-primary fw-bold">THE STUDIOS:{{ $event->location->name ?? '-' }}</p>
                                 </div>
                             </div>
                         </div>

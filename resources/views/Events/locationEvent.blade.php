@@ -1,11 +1,8 @@
 @extends('layout')
 @section('content')
 
+
     <div class="container">
-        <a href="{{route('category.create')}}" class="btn btn-primary mb-5">Category Create</a>
-        <a href="{{ route('category.list') }}" class="btn btn-primary mb-5">Category List</a>
-        <a href="{{ route('event.create') }}" class="btn btn-primary mb-5">Event Create</a>
-        <a href="{{ route('event.list') }}" class="btn btn-primary mb-5">Event List</a>
         <div class="events mt-5">
             <div class="row mb-5">
                 @foreach($events as $event)
@@ -29,9 +26,7 @@
                             <h4>{{ substr($event->description, 0, 120) }}...</h4>
                             <div class="studio ">
                                 <p class="text-primary fw-bold">LOCATIONS:
-                                    <a href="{{ route('location.event', ['locationId' => $event->location_id ?? 0]) }}">
-                                        {{ $event->location->name ?? '-'}}
-                                    </a>
+                                    {{ $event->location->name ?? '-'}}
                                 </p>
                             </div>
                         </div>
@@ -40,4 +35,5 @@
             </div>
         </div>
     </div>
+
 @endsection

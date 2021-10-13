@@ -18,7 +18,6 @@ class Event extends Model implements HasMedia
         'start_date',
         'end_date',
         'description',
-        'location',
         'location_id'
     ];
 

@@ -8,7 +8,7 @@
         <div class="row mt-5">
             <div class="col-sm-12 col-md-12 col-lg-6">
                 <h2>{{ $event->title }}</h2>
-                <h5 class="text-muted"> {{ $event->location }} </h5>
+                <h5 class="text-muted"> {{ $event->location->name ?? '-' }} </h5>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6">
                 <h4 class="text-primary">{{ $event->StartDateParts['month']}} {{ $event->StartDateParts['day'] }} -

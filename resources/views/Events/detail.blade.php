@@ -18,8 +18,6 @@
                 <h4 class="mb-5">{{ $event->description }}</h4>
             </div>
         </div>
-
-
         <div class="participants mt-5">
             <h2 class="text-primary mb-5 mt-5">Participants</h2>
             <div class="row mb-4">
@@ -38,6 +36,25 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+        <div class="comment-create my-5">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" action="{{ route('comment.create') }}">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-11">
+                                <textarea class="form-control" rows="4"  cols="5" name="body" style="width: 100%;"></textarea>
+                            </div>
+                            <input type="hidden" name="event_id" value="{{ $event->id}}">
+                            <div class="col-lg-1 d-flex justify-content-center align-items-center">
+                                <button class="btn btn-success float-end">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 

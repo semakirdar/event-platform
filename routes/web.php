@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocationController;
@@ -50,3 +51,6 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+
+Route::post('/comment/create', [CommentController::class, 'create'])->name('comment.create');

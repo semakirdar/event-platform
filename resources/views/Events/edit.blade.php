@@ -6,7 +6,7 @@
         <div class="col-sm-12 col-md-12 col-lg-6">
             <div class="card shadow-lg bg-body">
                 <div class="card-header">
-                    Event Add
+                    Event Edit
                 </div>
                 <div class="card-body">
                     <form method="post" action="{{ route('event.update', ['id' => $event->id]) }}"

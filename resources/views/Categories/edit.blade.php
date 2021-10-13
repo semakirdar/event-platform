@@ -6,22 +6,19 @@
         <div class="col-sm-12 col-md-12 col-lg-6">
             <div class="card shadow-lg bg-body">
                 <div class="card-header">
-                    Category Add
+                    Category Edit
                 </div>
                 <div class="card-body">
-                    <form method="post" action="#" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('category.update', ['id' => $category->id]) }}" enctype="multipart/form-data">
                         @csrf
-
                         <div class="mb-3">
                             <label>Name</label>
-                            <input name="name" class="form-control">
+                            <input value="{{ $category->name }}" name="name" class="form-control">
                         </div>
                         <button class="form-control btn btn-primary">ADD</button>
                     </form>
                 </div>
-
             </div>
-
         </div>
     </div>
 

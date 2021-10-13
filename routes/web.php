@@ -36,3 +36,6 @@ Route::post('/admin/participant/store', [ParticipantController::class, 'store'])
 
 Route::get('/admin/category/create', [CategoryController::class, 'create'])->name('category.create');
 Route::post('/admin/category/store', [CategoryController::class, 'store'])->name('category.store');
+Route::get('/admin/category/list', [CategoryController::class, 'list'])->name('category.list');
+Route::get('/admin/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+Route::post('/admin/category/{id}/update', [CategoryController::class, 'update'])->name('category.update');

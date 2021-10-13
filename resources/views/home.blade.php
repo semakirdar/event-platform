@@ -3,6 +3,7 @@
 
     <div class="container">
         <a href="{{route('category.create')}}" class="btn btn-primary mb-5">Category Create</a>
+        <a href="{{ route('category.list') }}" class="btn btn-primary mb-5">Category List</a>
         <a href="{{ route('event.create') }}" class="btn btn-primary mb-5">Event Create</a>
         <a href="{{ route('event.list') }}" class="btn btn-primary mb-5">Event List</a>
         <div class="events mt-5">

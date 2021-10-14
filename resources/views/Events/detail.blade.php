@@ -55,7 +55,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
         <div class="comment-list">
             @foreach($comments as $comment)
@@ -71,6 +70,4 @@
             @endforeach
         </div>
     </div>
-
-
 @endsection

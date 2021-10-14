@@ -23,7 +23,7 @@ class EventController extends Controller
 
     public function detail($id)
     {
-        $comments = Comment::query()->with('user')->where('event_id', $id)->get();
+        $comments = Comment::query()->with('user')->where('event_id', $id)->orderBy('id', 'DESC')->get();
         $participants = Participant::query()->where('event_id', $id)->get();
         $event = Event::query()->where('id', $id)->first();
         return view('Events.detail', [

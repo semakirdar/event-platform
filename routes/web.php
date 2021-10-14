@@ -4,7 +4,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LocationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ParticipantController;
@@ -33,7 +32,6 @@ Route::get('/admin/event/{eventId}/edit', [EventController::class, 'edit'])->nam
 Route::post('/admin/event/{id}/update', [EventController::class, 'update'])->name('event.update');
 Route::get('/location/{locationId}/event', [EventController::class, 'locationEvent'])->name('location.event');
 
-
 Route::get('/admin/event/{eventId}/participant/create', [ParticipantController::class, 'create'])->name('participant.create');
 Route::post('/admin/participant/store', [ParticipantController::class, 'store'])->name('participant.store');
 
@@ -43,7 +41,6 @@ Route::get('/admin/category/list', [CategoryController::class, 'list'])->name('c
 Route::get('/admin/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/admin/category/{id}/update', [CategoryController::class, 'update'])->name('category.update');
 
-
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
 
@@ -51,6 +48,5 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
-
 
 Route::post('/comment/create', [CommentController::class, 'create'])->name('comment.create');

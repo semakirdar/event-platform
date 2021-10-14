@@ -38,30 +38,34 @@
                     <li class="nav-item me-3">
                         <a class="nav-link" href="#">Buy tickets</a>
                     </li>
-                    <li class="nav-item me-3">
-                        <div class="dropdown">
-                            <a class="nav-link bg-white" type="button" id="dropdownMenuButton1"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Admin
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li>
-                                    <a class="dropdown-item" href="{{route('category.create')}}">Category
-                                        Create</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('category.list') }}">Category
-                                        List</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('event.create') }}">Event Create</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('event.list') }}">Event List</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    @auth()
+                        @if(auth()->user()->is_admin == 1)
+                            <li class="nav-item me-3">
+                                <div class="dropdown">
+                                    <a class="nav-link bg-white" type="button" id="dropdownMenuButton1"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        Admin
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li>
+                                            <a class="dropdown-item" href="{{route('category.create')}}">Category
+                                                Create</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('category.list') }}">Category
+                                                List</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('event.create') }}">Event Create</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('event.list') }}">Event List</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
+                    @endauth
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="nav-link" type="button" id="dropdownMenuButton1"
@@ -116,17 +120,11 @@
             </div>
         </div>
     </div>
-
 </header>
-
-
 <div>
     @yield('content')
 </div>
-
-
 <footer>
-
 </footer>
 <script src="{{ asset('js/app.js') }}"></script>
 @if ($errors->any())

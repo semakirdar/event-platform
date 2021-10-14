@@ -61,6 +61,10 @@
                                         <li>
                                             <a class="dropdown-item" href="{{ route('event.list') }}">Event List</a>
                                         </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('comment.list') }}">Approve
+                                                Comment</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -129,6 +133,9 @@
 <script src="{{ asset('js/app.js') }}"></script>
 @if ($errors->any())
     <script>toastr.error('{{ implode(",", $errors->all()) }}')</script>
+@endif
+@if (session('success'))
+    <script>toastr.success('{{ session('success') }}')</script>
 @endif
 </body>
 </html>

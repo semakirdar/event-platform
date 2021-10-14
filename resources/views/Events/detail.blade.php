@@ -38,6 +38,9 @@
             </div>
         </div>
         <div class="comment-create my-5">
+            <div class="d-flex justify-content-start align-items-center">
+                <h3 class="p-3">COMMENTS</h3>
+            </div>
             <div class="card p-3 ">
                 <div class="card-body">
                     <form method="post" action="{{ route('comment.create') }}">

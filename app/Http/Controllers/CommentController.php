@@ -17,4 +17,23 @@ class CommentController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function list()
+    {
+        $comments = Comment::query()
+            ->whereNull('approved_at')
+            ->with('event')
+            ->get();
+        return view('approveComments', [
+            'comments' => $comments
+        ]);
+    }
+
+    public function approve(Comment $comment)
+    {
+        $comment->approved_at = now();
+        $comment->save();
+
+        return redirect()->back()->with('success', 'Comment approved.');
+    }
 }

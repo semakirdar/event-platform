@@ -61,14 +61,20 @@
         </div>
         <div class="comment-list">
             @foreach($comments as $comment)
-                <div class="mb-3">
+                <div class="mb-3 comment-item">
                     <div class="bg-white p-4">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <strong>{{$comment->user->name}}</strong>
                             <p class="text-muted">{{ $comment->created_at }}</p>
                         </div>
-                        <p> {{ $comment->body  }}</p>
+                        <p> {{ $comment->body }}</p>
                     </div>
+                    <form method="post" action="{{ route('comment.delete', ['id' => $comment->id]) }}">
+                        @csrf
+                        <button class="btn btn-danger btn-sm comment-delete w-100">
+                            <i class="fas fa-trash-alt me-1"></i> DELETE
+                        </button>
+                    </form>
                 </div>
             @endforeach
         </div>

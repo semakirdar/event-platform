@@ -52,4 +52,5 @@ Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::post('/comment/create', [CommentController::class, 'create'])->name('comment.create');
 Route::get('/comment/list', [CommentController::class, 'list'])->name('comment.list');
 Route::get('/comment/{comment}/approve', [CommentController::class, 'approve'])->name('comment.approve');
+Route::post('/comment/{id}/delete', [CommentController::class, 'delete'])->name('comment.delete');
 

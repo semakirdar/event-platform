@@ -120,3 +120,19 @@ body {
             border-radius: 20px;
         }
 }
+
+.comment-item{
+    overflow: hidden;
+    position: relative;
+    &:hover{
+        .comment-delete{
+            bottom: 0;
+        }
+    }
+    .comment-delete{
+        position: absolute;
+        bottom: -100px;
+        transition: all .2s ease-in-out;
+        border-radius: 0;
+    }
+}

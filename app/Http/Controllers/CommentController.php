@@ -24,7 +24,7 @@ class CommentController extends Controller
             ->whereNull('approved_at')
             ->with('event')
             ->get();
-        return view('approveComments', [
+        return view('comments.approve', [
             'comments' => $comments
         ]);
     }
@@ -35,5 +35,14 @@ class CommentController extends Controller
         $comment->save();
 
         return redirect()->back()->with('success', 'Comment approved.');
+    }
+
+    public function delete($id)
+    {
+        $comment = Comment::query()->where('id', $id)->first();
+
+        $comment->delete();
+        return redirect()->back()->with('success', 'Comment deleted.');;
+
     }
 }

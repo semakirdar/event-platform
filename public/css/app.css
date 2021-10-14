@@ -17761,3 +17761,17 @@ body {
   padding: 10px;
   border-radius: 20px;
 }
+
+.comment-item {
+  overflow: hidden;
+  position: relative;
+}
+.comment-item:hover .comment-delete {
+  bottom: 0;
+}
+.comment-item .comment-delete {
+  position: absolute;
+  bottom: -100px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0;
+}

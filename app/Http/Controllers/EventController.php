@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Events\StoreRequest;
 use App\Http\Requests\Events\UpdateRequest;
+use App\Models\Comment;
 use App\Models\Event;
 use App\Models\Location;
 use App\Models\Participant;
@@ -22,11 +23,13 @@ class EventController extends Controller
 
     public function detail($id)
     {
+        $comments = Comment::query()->with('user')->where('event_id', $id)->get();
         $participants = Participant::query()->where('event_id', $id)->get();
         $event = Event::query()->where('id', $id)->first();
         return view('Events.detail', [
             'event' => $event,
-            'participants' => $participants
+            'participants' => $participants,
+            'comments' => $comments
         ]);
     }
 

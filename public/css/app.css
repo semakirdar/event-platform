@@ -17751,3 +17751,14 @@ body {
 .register .card-header strong {
   font-size: 30px !important;
 }
+
+.comment-create {
+  padding-top: 50px;
+  border-top: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 50px;
+}
+.comment-create textarea {
+  padding: 20px;
+  border-radius: 50px;
+}

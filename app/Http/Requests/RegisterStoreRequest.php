@@ -24,9 +24,9 @@ class RegisterStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|min:3',
             'email' => 'required|unique:users,email',
-            'password' => 'required'
+            'password' => 'required|min:6'
         ];
     }
 }

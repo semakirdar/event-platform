@@ -37,28 +37,32 @@
                 @endforeach
             </div>
         </div>
-        <div class="comment-create my-5">
-            <div class="d-flex justify-content-start align-items-center">
-                <h3 class="p-3">COMMENTS</h3>
-            </div>
-            <div class="card p-3 ">
-                <div class="card-body">
-                    <form method="post" action="{{ route('comment.store') }}">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-11">
+
+        @auth()
+            <div class="comment-create my-5">
+                <div class="d-flex justify-content-start align-items-center">
+                    <h3 class="p-3">COMMENTS</h3>
+                </div>
+                <div class="card p-3 ">
+                    <div class="card-body">
+                        <form method="post" action="{{ route('comment.store') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-11">
                                 <textarea class="form-control" rows="4" cols="5" name="body"
                                           style="width: 100%;"></textarea>
+                                </div>
+                                <input type="hidden" name="event_id" value="{{ $event->id}}">
+                                <div class="col-lg-1 d-flex justify-content-center align-items-center">
+                                    <button class="btn btn-primary form-control text-white float-end">Add</button>
+                                </div>
                             </div>
-                            <input type="hidden" name="event_id" value="{{ $event->id}}">
-                            <div class="col-lg-1 d-flex justify-content-center align-items-center">
-                                <button class="btn btn-primary form-control text-white float-end">Add</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endauth
+
         <div class="comment-list">
             @foreach($comments as $comment)
                 <div class="mb-3 comment-item">

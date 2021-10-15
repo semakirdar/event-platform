@@ -33,7 +33,7 @@
                         <a class="nav-link" href="#">Venue hire</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link" href="#">Support us</a>
+                        <a class="nav-link" href="{{ route('contact.index') }}">Support us</a>
                     </li>
                     <li class="nav-item me-3">
                         <a class="nav-link" href="#">Buy tickets</a>

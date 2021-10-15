@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -64,6 +65,8 @@ Route::post('/register/store', [RegisterController::class, 'store'])->name('regi
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
+
+Route::get('/contact/index', [ContactController::class, 'index'])->name('contact.index');
 
 
 

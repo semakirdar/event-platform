@@ -17775,3 +17775,15 @@ body {
   transition: all 0.2s ease-in-out;
   border-radius: 0;
 }
+
+.category-select {
+  border: none;
+  border-bottom: 2px solid;
+  border-radius: 0;
+}
+
+.form-select:focus {
+  border-color: transparent;
+  border-bottom: 2px solid;
+  box-shadow: none !important;
+}

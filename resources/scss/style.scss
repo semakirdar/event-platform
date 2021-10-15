@@ -102,37 +102,54 @@ body {
 
 .register {
     .card-header {
-        i{
+        i {
             font-size: 30px !important;
         }
-        strong{
+
+        strong {
             font-size: 30px !important;
         }
     }
 }
-.comment-create{
 
-    border-top:1px solid #cecece;
-    border-bottom:1px solid #cecece;
+.comment-create {
+
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
     padding-bottom: 50px;
-        textarea{
-            padding:10px;
-            border-radius: 20px;
-        }
+
+    textarea {
+        padding: 10px;
+        border-radius: 20px;
+    }
 }
 
-.comment-item{
+.comment-item {
     overflow: hidden;
     position: relative;
-    &:hover{
-        .comment-delete{
+
+    &:hover {
+        .comment-delete {
             bottom: 0;
         }
     }
-    .comment-delete{
+
+    .comment-delete {
         position: absolute;
         bottom: -100px;
         transition: all .2s ease-in-out;
         border-radius: 0;
     }
+}
+
+.category-select {
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 0;
+}
+
+.form-select:focus{
+    border-color: transparent;
+    border-bottom: 2px solid;
+    box-shadow: none !important;
 }

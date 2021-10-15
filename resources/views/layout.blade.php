@@ -104,11 +104,11 @@
                 </ul>
             </div>
         </nav>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-md-12 col-lg-3">
                 <form>
-                    <select id="categoryOption" class="form-select form-select-lg mb-3"
-                            aria-label=".form-select-lg example">
+                    <select id="categoryOption" class=" category-select form-select form-select-lg mb-3"
+                            aria-label=".form-select-lg example category-select">
                         <option value="">All Events</option>
                         @foreach($categories as $category)
                             <option

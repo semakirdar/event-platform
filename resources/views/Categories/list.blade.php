@@ -14,6 +14,11 @@
                         <td>
                             <a href="{{ route('category.edit', ['id' => $category->id]) }}"
                                class="btn btn-primary">Category Edit</a>
+
+                            <form class="d-inline-block" method="post" action="{{route('category.delete', ['id' => $category->id])}}">
+                                @csrf
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

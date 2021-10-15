@@ -17,7 +17,13 @@
                             <a href="{{ route('participant.create', ['eventId' => $event->id]) }}"
                                class="btn btn-primary">Participant add</a>
                             <a href="{{ route('event.edit', ['eventId' => $event->id]) }}"
-                               class="btn btn-primary">Event Edit</a>
+                               class="btn btn-success">Event Edit</a>
+
+                            <form class="d-inline-block" method="post" action="{{ route('event.delete', ['eventId' => $event->id]) }}">
+                                @csrf
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+
                         </td>
                     </tr>
                 @endforeach

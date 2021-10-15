@@ -42,9 +42,14 @@ class CategoryController extends Controller
     {
         $category = Category::query()->where('id', $id)->first();
         $category->name = $request->name;
-
         $category->save();
         return redirect()->route('category.list');
+    }
 
+    public function delete($id)
+    {
+        $category = Category::query()->where('id', $id)->first();
+        $category->delete();
+        return redirect()->back()->with('success', 'Category deleted.');
     }
 }

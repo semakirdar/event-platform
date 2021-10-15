@@ -23,11 +23,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function () {
     Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.store');
     Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-    Route::middleware(['admin'])->group(function(){
+    Route::middleware(['admin'])->group(function () {
         Route::get('/admin/event/create', [EventController::class, 'create'])->name('event.create');
 
         Route::post('/event/store', [EventController::class, 'store'])->name('event.store');
@@ -44,9 +44,11 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/admin/category/list', [CategoryController::class, 'list'])->name('category.list');
         Route::get('/admin/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
         Route::post('/admin/category/{id}/update', [CategoryController::class, 'update'])->name('category.update');
+        Route::post('/admin/category/{id}/delete', [CategoryController::class, 'delete'])->name('category.delete');
 
         Route::get('/comment/list', [CommentController::class, 'list'])->name('comment.list');
         Route::get('/comment/{comment}/approve', [CommentController::class, 'approve'])->name('comment.approve');
+
 
         Route::post('/comment/{id}/delete', [CommentController::class, 'delete'])->name('comment.delete');
     });
@@ -55,11 +57,13 @@ Route::get('/event/{categoryId}', [EventController::class, 'index'])->name('even
 Route::get('/event/detail/{id}', [EventController::class, 'detail'])->name('event.detail');
 Route::get('/admin/event/list', [EventController::class, 'list'])->name('event.list');
 Route::get('/location/{locationId}/event', [EventController::class, 'locationEvent'])->name('location.event');
+Route::post('/event/{eventId}/delete', [EventController::class, 'delete'])->name('event.delete');
 
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
+
 
 

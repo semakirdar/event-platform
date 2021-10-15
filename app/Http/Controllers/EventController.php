@@ -128,4 +128,13 @@ class EventController extends Controller
 
     }
 
+    public function delete($eventId)
+    {
+        $event = Event::query()->where('id', $eventId)->first();
+        $event->delete();
+
+        return redirect()->back()->with('success', 'Event deleted.');
+
+    }
+
 }

@@ -73,6 +73,7 @@
                         </div>
                         <p> {{ $comment->body }}</p>
                     </div>
+                    @auth()
                     @if(auth()->user()->is_admin == 1)
                         <form method="post" action="{{ route('comment.delete', ['id' => $comment->id]) }}">
                             @csrf
@@ -81,6 +82,7 @@
                             </button>
                         </form>
                     @endif
+                    @endauth
                 </div>
             @endforeach
         </div>

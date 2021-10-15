@@ -43,7 +43,7 @@
             </div>
             <div class="card p-3 ">
                 <div class="card-body">
-                    <form method="post" action="{{ route('comment.create') }}">
+                    <form method="post" action="{{ route('comment.store') }}">
                         @csrf
                         <div class="row">
                             <div class="col-lg-11">

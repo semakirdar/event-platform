@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    public function create(CreateRequest $request)
+    public function store(CreateRequest $request)
     {
         $comment = Comment::query()->create([
             'body' => $request->body,

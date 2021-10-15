@@ -73,12 +73,14 @@
                         </div>
                         <p> {{ $comment->body }}</p>
                     </div>
-                    <form method="post" action="{{ route('comment.delete', ['id' => $comment->id]) }}">
-                        @csrf
-                        <button class="btn btn-danger btn-sm comment-delete w-100">
-                            <i class="fas fa-trash-alt me-1"></i> DELETE
-                        </button>
-                    </form>
+                    @if(auth()->user()->is_admin == 1)
+                        <form method="post" action="{{ route('comment.delete', ['id' => $comment->id]) }}">
+                            @csrf
+                            <button class="btn btn-danger btn-sm comment-delete w-100">
+                                <i class="fas fa-trash-alt me-1"></i> DELETE
+                            </button>
+                        </form>
+                    @endif
                 </div>
             @endforeach
         </div>

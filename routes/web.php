@@ -50,8 +50,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/comment/list', [CommentController::class, 'list'])->name('comment.list');
         Route::get('/comment/{comment}/approve', [CommentController::class, 'approve'])->name('comment.approve');
 
-
         Route::post('/comment/{id}/delete', [CommentController::class, 'delete'])->name('comment.delete');
+
     });
 });
 Route::get('/event/{categoryId}', [EventController::class, 'index'])->name('event.index');
@@ -68,6 +68,8 @@ Route::post('/login/store', [LoginController::class, 'store'])->name('login.stor
 
 Route::get('/contact/index', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/admin/contact/list', [ContactController::class, 'list'])->name('contact.list');
+
 
 
 

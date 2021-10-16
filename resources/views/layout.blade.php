@@ -65,6 +65,10 @@
                                             <a class="dropdown-item" href="{{ route('comment.list') }}">Approve
                                                 Comment</a>
                                         </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('contact.list') }}">Contact Message
+                                                List</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>

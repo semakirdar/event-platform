@@ -14,11 +14,6 @@ class ContactController extends Controller
 
     }
 
-    public function create()
-    {
-
-    }
-
     public function store(StoreRequest $request)
     {
         $contact = Contact::query()->create([
@@ -27,5 +22,13 @@ class ContactController extends Controller
             'message' => $request->message
         ]);
         return redirect()->back();
+    }
+
+    public function list()
+    {
+        $contacts = Contact::query()->get();
+        return view('contacts.list', [
+            'contacts' => $contacts
+        ]);
     }
 }

@@ -9,7 +9,7 @@
                     Contact
                 </div>
                 <div class="card-body">
-                    <form method="post" action="{{ route('event.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('contact.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="mb-3">
@@ -22,7 +22,7 @@
                         </div>
                         <div class="mb-3">
                             <label>Message</label>
-                            <input name="message" class="form-control">
+                            <textarea name="message" class="form-control"></textarea>
                         </div>
                         <button class="form-control btn btn-primary">ADD</button>
                     </form>

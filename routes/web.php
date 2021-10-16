@@ -67,6 +67,7 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
 
 Route::get('/contact/index', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
 
 

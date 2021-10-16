@@ -31,4 +31,12 @@ class ContactController extends Controller
             'contacts' => $contacts
         ]);
     }
+
+    public function delete($id)
+    {
+        $contact = Contact::query()->where('id', $id)->first();
+        $contact->delete();
+
+        return redirect()->back()->with('success', 'Contact message deleted');
+    }
 }

@@ -69,6 +69,7 @@ Route::post('/login/store', [LoginController::class, 'store'])->name('login.stor
 Route::get('/contact/index', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/admin/contact/list', [ContactController::class, 'list'])->name('contact.list');
+Route::post('/admin/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
 
 
 

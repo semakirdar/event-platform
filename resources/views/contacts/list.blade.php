@@ -6,7 +6,9 @@
             <h4 class="text-primary mb-3">MESSAGES</h4>
             <table class="table">
                 <tr>
-                    <th>Category Name</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
                     <th>Action</th>
                 </tr>
                 @foreach($contacts as $contact)
@@ -15,11 +17,8 @@
                         <td> {{ $contact->email }}</td>
                         <td> {{ $contact->message}}</td>
                         <td>
-                            <a href="{{ route('category.edit', ['id' => $contact->id]) }}"
-                               class="btn btn-success">Category Edit</a>
-
                             <form class="d-inline-block" method="post"
-                                  action="{{route('category.delete', ['id' => $contact->id])}}">
+                                  action="{{route('contact.delete', ['id' => $contact->id])}}">
                                 @csrf
                                 <button class="btn btn-danger">Delete</button>
                             </form>
